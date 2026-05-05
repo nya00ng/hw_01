@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Mood Landing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 고정 헤더: 로고, 메뉴, 모바일 햄버거 버튼 구조 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="홈으로 이동">NETFLIX</a>
+
+      <nav class="main-nav" aria-label="메인 메뉴">
+        <ul class="menu-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Series</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">New &amp; Popular</a></li>
+          <li><a href="#">My List</a></li>
+        </ul>
+      </nav>
+
+      <!-- 모바일에서만 보이는 햄버거 버튼(기능은 추후 JS로 연결) -->
+      <button class="menu-toggle" type="button" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 히어로 섹션: 배경 이미지 + 텍스트 + CTA 버튼 -->
+    <section class="hero-section">
+      <!-- 배경 이미지를 넣을 수 있는 레이어 -->
+      <div class="hero-bg" role="img" aria-label="메인 배경 이미지"></div>
+
+      <div class="container hero-content">
+        <p class="hero-label">N SERIES</p>
+        <h1 class="hero-title">Dark Night Chronicles</h1>
+        <p class="hero-desc">어둠 속 진실을 쫓는 미스터리 스릴러 시리즈.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">Play</a>
+          <a href="#" class="btn btn-secondary">My List</a>
+        </div>
+      </div>
+
+      <!-- 히어로 하단에서 본문으로 자연스럽게 이어지는 그라데이션 -->
+      <div class="hero-gradient" aria-hidden="true"></div>
+    </section>
+
+    <!-- 콘텐츠 카드 섹션 -->
+    <section class="content-sections">
+      <div class="container">
+        <!-- 세로형 포스터 카드 목록 -->
+        <section class="content-row" aria-labelledby="originals-title">
+          <h2 id="originals-title" class="row-title">Netflix Originals</h2>
+          <div class="card-list poster-list">
+            <article class="media-card poster-card"><img src="https://picsum.photos/seed/dark-city/400/600" alt="Dark City 포스터" /></article>
+            <article class="media-card poster-card"><img src="https://picsum.photos/seed/mystery-house/400/600" alt="Mystery House 포스터" /></article>
+            <article class="media-card poster-card"><img src="https://picsum.photos/seed/silent-code/400/600" alt="Silent Code 포스터" /></article>
+            <article class="media-card poster-card"><img src="https://picsum.photos/seed/night-hunter/400/600" alt="Night Hunter 포스터" /></article>
+            <article class="media-card poster-card"><img src="https://picsum.photos/seed/neon-storm/400/600" alt="Neon Storm 포스터" /></article>
+          </div>
+        </section>
+
+        <!-- 가로형 썸네일 카드 목록 -->
+        <section class="content-row" aria-labelledby="trending-title">
+          <h2 id="trending-title" class="row-title">Trending Now</h2>
+          <div class="card-list thumbnail-list">
+            <article class="media-card thumb-card"><img src="https://picsum.photos/seed/action-night/640/360" alt="Action Night 썸네일" /></article>
+            <article class="media-card thumb-card"><img src="https://picsum.photos/seed/hidden-signal/640/360" alt="Hidden Signal 썸네일" /></article>
+            <article class="media-card thumb-card"><img src="https://picsum.photos/seed/cold-mission/640/360" alt="Cold Mission 썸네일" /></article>
+            <article class="media-card thumb-card"><img src="https://picsum.photos/seed/shadow-route/640/360" alt="Shadow Route 썸네일" /></article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터: 브랜드 설명 + 링크 + 카피라이트 -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">Netflix 무드의 영상 콘텐츠를 탐색하는 데모 랜딩 페이지입니다.</p>
+      <nav class="footer-nav" aria-label="푸터 메뉴">
+        <a href="#">About</a>
+        <a href="#">Support</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </nav>
+      <p class="copyright">© 2026 Netflix Mood Layout. All rights reserved.</p>
+      <p class="homework-mark">202605_01HOMEWORK SINHYE</p>
+    </div>
+  </footer>
+</body>
+</html>
