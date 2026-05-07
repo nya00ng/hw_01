@@ -1,0 +1,112 @@
+/* 페이지 전체 정렬과 배경색을 위한 기본 설정 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1f2937;
+}
+
+/* Todo 앱을 감싸는 카드 영역 */
+.todo-card {
+  width: min(560px, 92%);
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  padding: 24px;
+}
+
+/* 앱 제목 스타일 */
+.todo-title {
+  margin: 0 0 18px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* 입력창과 버튼을 가로로 배치 */
+.todo-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* 할 일 입력창 기본 스타일 */
+.todo-input {
+  flex: 1;
+  height: 42px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 0.98rem;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Todo 추가 버튼 기본 스타일 */
+.todo-add-btn {
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  padding: 0 16px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.todo-add-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Todo 목록 영역(아직 항목은 없음) */
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* 각 Todo 한 줄의 기본 모양 */
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Todo 글자는 남는 공간을 사용하도록 설정 */
+.todo-list li span {
+  flex: 1;
+}
+
+/* 목록 안 버튼 기본 스타일 */
+.todo-list li button {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.todo-list li button:hover {
+  background: #f8fafc;
+}
+
+/* 상태 영역(총 개수/완료 개수) */
+.status-area {
+  margin-top: 14px;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
