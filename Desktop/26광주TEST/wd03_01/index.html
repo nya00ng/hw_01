@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub 저장소 검색 URL 생성기</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 760px;
+        margin: 40px auto;
+        padding: 0 16px;
+        line-height: 1.5;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        margin: 16px 0;
+      }
+      input {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 14px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .label {
+        margin-top: 16px;
+        font-weight: bold;
+      }
+      pre {
+        background: #f6f8fa;
+        padding: 12px;
+        border-radius: 8px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+      .hint {
+        color: #555;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>GitHub 저장소 검색 URL 확인 화면</h1>
+    <p class="hint">
+      keyword를 입력하고 버튼을 누르면, template literal 방식으로 URL을 생성합니다.
+    </p>
+
+    <div class="row">
+      <input id="keywordInput" type="text" placeholder="예: react, vue, spring boot" />
+      <button id="generateBtn">URL 생성</button>
+    </div>
+
+    <div class="label">생성된 URL</div>
+    <pre id="result">아직 생성되지 않았습니다.</pre>
+
+    <script>
+      // GitHub 저장소 검색 URL을 만들어 주는 함수
+      function createGithubRepoSearchUrl(keyword) {
+        // 1) 사용자 입력 검색어를 URL에 안전하게 넣기 위해 인코딩
+        const encodedKeyword = encodeURIComponent(keyword);
+
+        // 2) template literal(``)로 URL 조합
+        // - q: 검색어
+        // - sort=stars: stars 기준 정렬
+        // - order=desc: 내림차순
+        // - per_page=6: 결과 6개 제한
+        const url = `https://api.github.com/search/repositories?q=${encodedKeyword}&sort=stars&order=desc&per_page=6`;
+
+        // 3) 완성된 URL 반환
+        return url;
+      }
+
+      const keywordInput = document.getElementById("keywordInput");
+      const generateBtn = document.getElementById("generateBtn");
+      const result = document.getElementById("result");
+
+      generateBtn.addEventListener("click", () => {
+        // 검색어 변수 이름은 keyword로 고정
+        const keyword = keywordInput.value.trim();
+
+        if (!keyword) {
+          result.textContent = "검색어(keyword)를 입력해 주세요.";
+          return;
+        }
+
+        const url = createGithubRepoSearchUrl(keyword);
+        result.textContent = url;
+      });
+    </script>
+  </body>
+</html>
